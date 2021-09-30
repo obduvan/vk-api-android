@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">kotlin_vezdecode</string>
+    <integer name="com_vk_sdk_AppId">7954863</integer>
+    <string name="user_avatar">user photo from vk account</string>
+    <string name="task_20">TASK-20</string>
+    <string name="task_10">TASK-10</string>
+</resources>
