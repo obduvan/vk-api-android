@@ -4,4 +4,9 @@
     <string name="user_avatar">user photo from vk account</string>
     <string name="task_20">TASK-20</string>
     <string name="task_10">TASK-10</string>
+    <string name="enter_name">Enter name</string>
+    <string name="friends_no_items">У вас нет друзей :(</string>
+    <string name="login_error_credentials">Ошибка логина</string>
+    <string name="txt_enter_name_hint">Enter name</string>
+    <string name="friend_no_city">Город отсутствует</string>
 </resources>

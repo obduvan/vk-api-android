@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.StateStrategyType
 interface FriendsView : MvpView {
     fun setFriendsList(friendsList: ArrayList<FriendModel>)
     fun setEmptyList()
-    fun showError(content: Int)
+    fun showError(keyText: Int)
     fun startLoading()
     fun endLoading()
 
