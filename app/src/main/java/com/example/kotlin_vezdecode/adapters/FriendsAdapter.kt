@@ -72,7 +72,6 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
         @SuppressLint("SetTextI18n")
 
         fun bind(friendModel: FriendModel) {
-            println(friendModel.image)
             friendModel.image?.let { url ->
                 Picasso.get().load(url).into(civAvatar)
             }
