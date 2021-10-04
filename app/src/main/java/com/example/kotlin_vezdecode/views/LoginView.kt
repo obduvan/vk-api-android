@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(value = AddToEndSingleStrategy::class)
 interface LoginView : MvpView {
-    fun showError(content: String)
+    fun showError(keyText: Int)
     fun openFriends()
     fun startLoading()
     fun endLoading()
