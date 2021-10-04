@@ -59,8 +59,6 @@ class FriendsActivity : MvpAppCompatActivity(), FriendsView {
     }
 
     override fun setFriendsList(friendsList: ArrayList<FriendModel>) {
-        println("!!!!!!!!!!!!!!!!")
-        friendsList.map{ println(it)}
         tvSearchError.visibility = View.GONE
         rvFriends.visibility = View.VISIBLE
 
