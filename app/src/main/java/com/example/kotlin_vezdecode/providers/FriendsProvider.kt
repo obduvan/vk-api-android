@@ -2,13 +2,17 @@ package com.example.kotlin_vezdecode.providers
 
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.example.kotlin_vezdecode.models.FriendModel
 import com.example.kotlin_vezdecode.presenters.FriendsPresenter
+import com.vk.api.sdk.utils.VKUtils
+import com.vk.api.sdk.utils.VKUtils.getCertificateFingerprint
+
 
 class FriendsProvider(var presenter: FriendsPresenter) {
-    private val TAG: String = FriendsProvider::class.java.simpleName
 
     fun testLoadFriends(hasFriends: Boolean) {
+
         Handler(Looper.getMainLooper()).postDelayed({
             val friendsList = ArrayList<FriendModel>()
 
