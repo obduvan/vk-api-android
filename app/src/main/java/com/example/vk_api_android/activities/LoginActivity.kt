@@ -13,20 +13,20 @@ import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 
 class LoginActivity : MvpAppCompatActivity(), LoginView{
-    private lateinit var button_10: Button
+    private lateinit var button_friends: Button
 
     @InjectPresenter
     lateinit var loginPresenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//
+
 //        val fingerprints = VKUtils.getCertificateFingerprint(this, this.getPackageName())!!
 //        Log.e("TAG", fingerprints[0].toString())
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tasks)
+        setContentView(R.layout.activity_actions)
 
-        button_10 = findViewById(R.id.button_10)
-        button_10.setOnClickListener {
+        button_friends = findViewById(R.id.button_friends)
+        button_friends.setOnClickListener {
             VK.login(this@LoginActivity, listOf(VKScope.FRIENDS))
         }
     }
@@ -45,11 +45,9 @@ class LoginActivity : MvpAppCompatActivity(), LoginView{
     }
 
     override fun startLoading() {
-        TODO("Not yet implemented")
     }
 
     override fun endLoading() {
-        TODO("Not yet implemented")
     }
 
 }

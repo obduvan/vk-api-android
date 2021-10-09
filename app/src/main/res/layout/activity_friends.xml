@@ -11,6 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:hint="@string/enter_name"
+        android:textColorHighlight="#00000000"
+        android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -28,7 +28,7 @@ class FriendsActivity : MvpAppCompatActivity(), FriendsView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.friends_activity)
+        setContentView(R.layout.activity_friends)
 
         rvFriends = findViewById(R.id.friends_RV)
         tvSearchError = findViewById(R.id.txt_search_error)
