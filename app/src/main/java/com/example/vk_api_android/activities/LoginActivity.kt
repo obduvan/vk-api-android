@@ -1,16 +1,14 @@
-package com.example.kotlin_vezdecode.activities
+package com.example.vk_api_android.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.presenters.LoginPresenter
-import com.example.kotlin_vezdecode.views.LoginView
+import com.example.vk_api_android.R
+import com.example.vk_api_android.presenters.LoginPresenter
+import com.example.vk_api_android.views.LoginView
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
-import com.vk.api.sdk.utils.VKUtils
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 

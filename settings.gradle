@@ -6,5 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "kotlin_vezdecode"
+rootProject.name = "vk_api_android"
 include ':app'

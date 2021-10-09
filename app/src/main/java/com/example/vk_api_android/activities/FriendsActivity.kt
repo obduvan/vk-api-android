@@ -1,4 +1,4 @@
-package com.example.kotlin_vezdecode.activities
+package com.example.vk_api_android.activities
 
 
 import android.os.Bundle
@@ -9,11 +9,11 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.adapters.FriendsAdapter
-import com.example.kotlin_vezdecode.models.FriendModel
-import com.example.kotlin_vezdecode.presenters.FriendsPresenter
-import com.example.kotlin_vezdecode.views.FriendsView
+import com.example.vk_api_android.R
+import com.example.vk_api_android.adapters.FriendsAdapter
+import com.example.vk_api_android.models.FriendModel
+import com.example.vk_api_android.presenters.FriendsPresenter
+import com.example.vk_api_android.views.FriendsView
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 

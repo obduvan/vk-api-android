@@ -1,4 +1,4 @@
-package com.example.kotlin_vezdecode
+package com.example.vk_api_android
 
 import org.junit.Test
 

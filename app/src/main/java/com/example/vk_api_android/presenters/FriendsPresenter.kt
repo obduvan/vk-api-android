@@ -1,9 +1,9 @@
-package com.example.kotlin_vezdecode.presenters
+package com.example.vk_api_android.presenters
 
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.models.FriendModel
-import com.example.kotlin_vezdecode.providers.FriendsProvider
-import com.example.kotlin_vezdecode.views.FriendsView
+import com.example.vk_api_android.R
+import com.example.vk_api_android.models.FriendModel
+import com.example.vk_api_android.providers.FriendsProvider
+import com.example.vk_api_android.views.FriendsView
 import moxy.InjectViewState
 import moxy.MvpPresenter
 

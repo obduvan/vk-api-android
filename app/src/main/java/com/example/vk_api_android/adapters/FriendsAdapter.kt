@@ -1,4 +1,4 @@
-package com.example.kotlin_vezdecode.adapters
+package com.example.vk_api_android.adapters
 
 import android.annotation.SuppressLint
 
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.models.FriendModel
+import com.example.vk_api_android.R
+import com.example.vk_api_android.models.FriendModel
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 

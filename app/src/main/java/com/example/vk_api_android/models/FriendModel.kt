@@ -1,4 +1,4 @@
-package com.example.kotlin_vezdecode.models
+package com.example.vk_api_android.models
 
 class FriendModel(
     var name: String = "",

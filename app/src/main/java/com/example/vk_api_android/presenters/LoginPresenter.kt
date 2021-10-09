@@ -1,10 +1,10 @@
-package com.example.kotlin_vezdecode.presenters
+package com.example.vk_api_android.presenters
 
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.views.LoginView
+import com.example.vk_api_android.R
+import com.example.vk_api_android.views.LoginView
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.auth.VKAuthCallback

@@ -1,7 +1,7 @@
-package com.example.kotlin_vezdecode.views
+package com.example.vk_api_android.views
 
 
-import com.example.kotlin_vezdecode.models.FriendModel
+import com.example.vk_api_android.models.FriendModel
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType

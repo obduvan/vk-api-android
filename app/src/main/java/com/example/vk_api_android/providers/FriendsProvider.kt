@@ -1,29 +1,21 @@
-package com.example.kotlin_vezdecode.providers
+package com.example.vk_api_android.providers
 
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import com.example.kotlin_vezdecode.R
-import com.example.kotlin_vezdecode.models.FriendModel
-import com.example.kotlin_vezdecode.presenters.FriendsPresenter
+import com.example.vk_api_android.R
+import com.example.vk_api_android.models.FriendModel
+import com.example.vk_api_android.presenters.FriendsPresenter
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.VKApiCallback
-import com.vk.api.sdk.VKApiConfig
-import com.vk.api.sdk.auth.VKAuthParams
-import com.vk.api.sdk.auth.VKScope
-import com.vk.api.sdk.requests.VKRequest
-import com.vk.api.sdk.utils.VKUtils
-import com.vk.api.sdk.utils.VKUtils.getCertificateFingerprint
 import com.vk.sdk.api.friends.FriendsService
 import com.vk.sdk.api.friends.dto.FriendsGetFieldsResponse
-import com.vk.sdk.api.users.dto.UsersFields
 import com.vk.sdk.api.users.dto.UsersFields.*
 import com.vk.sdk.api.users.dto.UsersUserFull
 
 
 class FriendsProvider(var presenter: FriendsPresenter) {
-    private val TAG: Class<FriendsProvider> = FriendsProvider::class.java
-    private var friendsList: ArrayList<FriendModel> = arrayListOf();
+    private var friendsList: ArrayList<FriendModel> = arrayListOf()
 
     fun testLoadFriends(hasFriends: Boolean) {
 
@@ -78,7 +70,6 @@ class FriendsProvider(var presenter: FriendsPresenter) {
                 }
 
                 override fun success(result: FriendsGetFieldsResponse) {
-//                    deleteNull(result.items)
                     presenter.friendsLoaded(getFriendsModels(result.items))
                 }
 
@@ -101,12 +92,5 @@ class FriendsProvider(var presenter: FriendsPresenter) {
             )
         }
         return friendsList
-    }
-
-
-    fun deleteNull(listUsers: List<UsersUserFull>) {
-        listUsers.forEach {
-            Log.e("TAG", it.city.toString())
-        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.kotlin_vezdecode.views
+package com.example.vk_api_android.views
 
 
 import moxy.MvpView
