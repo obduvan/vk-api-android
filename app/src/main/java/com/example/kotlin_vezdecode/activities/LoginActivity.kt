@@ -23,7 +23,6 @@ class LoginActivity : MvpAppCompatActivity(), LoginView{
     override fun onCreate(savedInstanceState: Bundle?) {
 //
 //        val fingerprints = VKUtils.getCertificateFingerprint(this, this.getPackageName())!!
-//
 //        Log.e("TAG", fingerprints[0].toString())
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tasks)
@@ -37,11 +36,10 @@ class LoginActivity : MvpAppCompatActivity(), LoginView{
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
        if (!loginPresenter.loginVk(requestCode=requestCode, resultCode = resultCode, data=data))
            super.onActivityResult(requestCode, resultCode, data)
-
-
     }
-    override fun showError(keyText: Int) {
-        Toast.makeText(applicationContext, getString(keyText), Toast.LENGTH_SHORT).show()
+
+    override fun showError(textKey: Int) {
+        Toast.makeText(applicationContext, getString(textKey), Toast.LENGTH_SHORT).show()
     }
 
     override fun openFriends() {

@@ -9,5 +9,6 @@
     <string name="login_error_credentials">Ошибка логина</string>
     <string name="txt_enter_name_hint">Enter name</string>
     <string name="friend_no_city">Город отсутствует</string>
+    <string name="friends_error_loading">Ошибка загрузки друзей</string>
 
 </resources>

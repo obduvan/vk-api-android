@@ -70,8 +70,8 @@ class FriendsActivity : MvpAppCompatActivity(), FriendsView {
         tvSearchError.visibility = View.VISIBLE
     }
 
-    override fun showError(keyText: Int) {
-        tvSearchError.text = getString(keyText)
+    override fun showError(textKey: Int) {
+        tvSearchError.text = getString(textKey)
 
 
     }
