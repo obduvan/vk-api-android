@@ -5,29 +5,33 @@
     android:layout_height="match_parent">
 
 
-     <Button
-        android:id="@+id/button_10"
+    <Button
+        android:id="@+id/button_friends"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="280dp"
-        android:text="@string/task_10"
-        app:layout_constraintBottom_toTopOf="@+id/button_20"
+        android:text="@string/see_friends"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_photos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_20"
+        android:id="@+id/button_photos"
         android:layout_width="240dp"
         android:layout_height="48dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="288dp"
-        android:text="@string/task_20"
+        android:text="@string/see_my_photos"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_10" />
+        app:layout_constraintTop_toBottomOf="@+id/button_friends" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
