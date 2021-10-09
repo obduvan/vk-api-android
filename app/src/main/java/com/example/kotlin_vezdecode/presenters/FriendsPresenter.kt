@@ -12,7 +12,7 @@ import moxy.MvpPresenter
 class FriendsPresenter : MvpPresenter<FriendsView>() {
     fun loadFriends() {
         viewState.startLoading()
-        FriendsProvider(presenter = this).testLoadFriends(hasFriends = true)
+        FriendsProvider(presenter = this).loadFriends()
 
     }
 
@@ -20,11 +20,14 @@ class FriendsPresenter : MvpPresenter<FriendsView>() {
         viewState.endLoading()
         if (friendsList.size == 0) {
             viewState.setEmptyList()
-            viewState.showError(keyText = R.string.friends_no_items)
+            viewState.showError(textKey = R.string.friends_no_items)
         } else {
             viewState.setFriendsList(friendsList = friendsList)
         }
+    }
 
+    fun showError(textKey: Int){
+        viewState.showError(textKey =textKey )
     }
 
 }

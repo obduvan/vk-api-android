@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_vezdecode.R
@@ -16,7 +17,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() {
 
-    private var initList: ArrayList<FriendModel> = ArrayList()
     private var sourceFriendList: ArrayList<FriendModel> = ArrayList()
     private var friendsList: ArrayList<FriendModel> = ArrayList()
 
@@ -29,10 +29,13 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
     }
 
 
+    @SuppressLint("ResourceType")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendsViewHolder {
         val layoutInflater: LayoutInflater =
             LayoutInflater.from(parent.context)        //parent = RV
         val itemView: View = layoutInflater.inflate(R.layout.block_friend, parent, false)
+//        val drawableItem: View = layoutInflater.inflate(R.drawable.online_satus, parent, false)
+
         return FriendsViewHolder(itemView = itemView)
     }
 
@@ -66,8 +69,7 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
         private var civAvatar: CircleImageView = itemView.findViewById(R.id.civ_friend_avatar)
         private var txtUserName: TextView = itemView.findViewById(R.id.txt_user_name)
         private var txtCity: TextView = itemView.findViewById(R.id.txt_city_friend)
-        private var imgOnline: View = itemView.findViewById(R.id.img_online_friend)
-
+        private var imgOnline: ImageView = itemView.findViewById(R.id.img_online_status)
 
         @SuppressLint("SetTextI18n")
 
@@ -82,6 +84,7 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
                 imgOnline.visibility = View.VISIBLE
             else
                 imgOnline.visibility = View.GONE
+
         }
     }
 }

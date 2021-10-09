@@ -2,20 +2,38 @@ package com.example.kotlin_vezdecode.providers
 
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
+import com.example.kotlin_vezdecode.R
 import com.example.kotlin_vezdecode.models.FriendModel
 import com.example.kotlin_vezdecode.presenters.FriendsPresenter
+import com.vk.api.sdk.VK
+import com.vk.api.sdk.VKApiCallback
+import com.vk.api.sdk.VKApiConfig
+import com.vk.api.sdk.auth.VKAuthParams
+import com.vk.api.sdk.auth.VKScope
+import com.vk.api.sdk.requests.VKRequest
+import com.vk.api.sdk.utils.VKUtils
+import com.vk.api.sdk.utils.VKUtils.getCertificateFingerprint
+import com.vk.sdk.api.friends.FriendsService
+import com.vk.sdk.api.friends.dto.FriendsGetFieldsResponse
+import com.vk.sdk.api.users.dto.UsersFields
+import com.vk.sdk.api.users.dto.UsersFields.*
+import com.vk.sdk.api.users.dto.UsersUserFull
+
 
 class FriendsProvider(var presenter: FriendsPresenter) {
-    private val TAG: String = FriendsProvider::class.java.simpleName
+    private val TAG: Class<FriendsProvider> = FriendsProvider::class.java
+    private var friendsList: ArrayList<FriendModel> = arrayListOf();
 
     fun testLoadFriends(hasFriends: Boolean) {
+
         Handler(Looper.getMainLooper()).postDelayed({
             val friendsList = ArrayList<FriendModel>()
 
             if (hasFriends) {
                 val friend1 =
                     FriendModel(
-                        name = "Vasya",
+                        name = "Ivan",
                         surname = "Ivan",
                         city = "Ebenya",
                         online = false,
@@ -47,5 +65,48 @@ class FriendsProvider(var presenter: FriendsPresenter) {
 
         }, 200)
 
+    }
+
+    fun loadFriends() {
+        val fields = listOf(FIRST_NAME_NOM, LAST_NAME_NOM, CITY, ONLINE_INFO, PHOTO)
+        VK.execute(
+            FriendsService().friendsGet(fields = fields,),
+            object : VKApiCallback<FriendsGetFieldsResponse> {
+                override fun fail(error: Exception) {
+                    Log.e("ERROR", error.toString())
+                    presenter.showError(textKey = R.string.friends_error_loading)
+                }
+
+                override fun success(result: FriendsGetFieldsResponse) {
+//                    deleteNull(result.items)
+                    presenter.friendsLoaded(getFriendsModels(result.items))
+                }
+
+            })
+    }
+
+
+    fun getFriendsModels(listUser: List<UsersUserFull>): ArrayList<FriendModel> {
+        friendsList.clear()
+
+        listUser.forEach {
+            friendsList.add(
+                FriendModel(
+                    name = if (it.firstName != null) it.firstName!! else "",
+                    surname = if (it.lastName != null) it.lastName!! else "",
+                    city = it.city?.title,
+                    online = it.onlineInfo?.isOnline ?: false,
+                    image = it.photo
+                )
+            )
+        }
+        return friendsList
+    }
+
+
+    fun deleteNull(listUsers: List<UsersUserFull>) {
+        listUsers.forEach {
+            Log.e("TAG", it.city.toString())
+        }
     }
 }
