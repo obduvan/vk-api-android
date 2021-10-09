@@ -15,3 +15,13 @@
 .cxx
 local.properties
 /.idea/
+
+/.idea/.name
+/.idea/modules/
+/.idea/.gitignore
+/.idea/libraries/
+/.idea/misc.xml
+/.idea/compiler.xml
+/.idea/gradle.xml
+/.idea/render.experimental.xml
+/.idea/vcs.xml
