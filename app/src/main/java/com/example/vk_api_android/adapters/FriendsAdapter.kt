@@ -20,21 +20,19 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
     private var sourceFriendList: ArrayList<FriendModel> = ArrayList()
     private var friendsList: ArrayList<FriendModel> = ArrayList()
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setupFriends(friendsListFromPres: ArrayList<FriendModel>) {
         sourceFriendList.clear()
         sourceFriendList.addAll(friendsListFromPres)
         filter(query = "")
-        notifyDataSetChanged()
     }
 
 
-    @SuppressLint("ResourceType")
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendsViewHolder {
         val layoutInflater: LayoutInflater =
             LayoutInflater.from(parent.context)        //parent = RV
         val itemView: View = layoutInflater.inflate(R.layout.block_friend, parent, false)
-//        val drawableItem: View = layoutInflater.inflate(R.drawable.online_satus, parent, false)
 
         return FriendsViewHolder(itemView = itemView)
     }
@@ -71,7 +69,9 @@ class FriendsAdapter : RecyclerView.Adapter<FriendsAdapter.FriendsViewHolder>() 
         private var txtCity: TextView = itemView.findViewById(R.id.txt_city_friend)
         private var imgOnline: ImageView = itemView.findViewById(R.id.img_online_status)
 
-        @SuppressLint("SetTextI18n")
+//        @SuppressLint("SetTextI18n")
+
+
 
         fun bind(friendModel: FriendModel) {
             friendModel.image?.let { url ->
