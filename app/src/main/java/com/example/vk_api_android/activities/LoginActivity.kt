@@ -38,6 +38,7 @@ class LoginActivity : MvpAppCompatActivity(), LoginView{
 
     override fun showError(textKey: Int) {
         Toast.makeText(applicationContext, getString(textKey), Toast.LENGTH_SHORT).show()
+        //
     }
 
     override fun openFriends() {
